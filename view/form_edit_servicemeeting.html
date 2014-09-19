@@ -1,0 +1,27 @@
+<form role="form" action="<?php echo $page; ?>" method="post">
+	<!--<h3>Week of <?php echo $date; ?></h3>-->
+	<h4>Service Meeting <?php echo $midweek; ?></h4>
+	<div class="form-group">
+		<label for="part_1">First Part &nbsp&nbsp&nbsp<i><?php print $sm_1; ?></i></label>
+		<select class="form-control input-sm" id="part_1" name="part_1" onchange="this.form.submit()"><?php echo $opt_1; ?></select>
+	</div>
+</form>
+<form role="form" action="<?php echo $page; ?>" method="post">
+	<div class="form-group">
+		<label for="part_2">Second Part &nbsp&nbsp&nbsp<i><?php print $sm_2; ?></i></label>
+		<select class="form-control input-sm" id="part_2" name="part_2" onchange="this.form.submit()"><?php echo $opt_2; ?></select>
+	</div>
+</form>		
+<form role="form" action="<?php echo $page; ?>" method="post">
+	<div class="form-group">
+		<label for="part_3">Third Part &nbsp&nbsp&nbsp<i><?php print $sm_3; ?></i></label>
+		<select class="form-control input-sm" id="part_3" name="part_3" onchange="this.form.submit()"><?php echo $opt_3; ?></select>
+	</div>
+</form>
+<form role="form" action="<?php echo $page; ?>" method="post">
+	<div class="form-group">
+		<label for="close_prayer">Closing Prayer</label>
+		<select class="form-control input-sm" id="close_prayer" name="close_prayer" onchange="this.form.submit()"><?php echo $opt_4; ?></select>
+	</div>
+</form>
+<p class="bg-primary"><?php echo $conflict_msg; ?></p>

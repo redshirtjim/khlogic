@@ -1,0 +1,135 @@
+<?php # - edit_pub.php
+// This page is for editing a publisher record.
+// This page is accessed through admin.php.
+
+$page_title = 'Edit a publisher';
+include ('include/header.html');
+
+// Check for a valid user ID, through GET or POST:
+if ( (isset($_GET['pubs_id'])) && (is_numeric($_GET['pubs_id'])) ) { // From edit_user.php
+	$pubs_id = $_GET['pubs_id'];
+} elseif ( (isset($_POST['pubs_id'])) && (is_numeric($_POST['pubs_id'])) ) { // Form submission.
+	$pubs_id = $_POST['pubs_id'];
+} else { // No valid ID, kill the script.
+	echo '<p class="error">This page has been accessed in error0.</p>';
+	include ('include/footer.html'); 
+	exit();
+}
+
+require ('db_conn_sel.php'); 
+
+
+
+// Check if the form has been submitted:
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+	$errors = array();
+	
+	// Check for a first name:
+	if (empty($_POST['first_name'])) {
+		$errors[] = 'You forgot to enter your first name.';
+	} else {
+		$first_name = mysqli_real_escape_string($dbc, trim($_POST['first_name']));
+	}
+	
+	// Check for a last name:
+	if (empty($_POST['last_name'])) {
+		$errors[] = 'You forgot to enter your last name.';
+	} else {
+		$last_name = mysqli_real_escape_string($dbc, trim($_POST['last_name']));
+	}
+
+	// Check for an email address:
+	if (empty($_POST['email'])) {
+		$errors[] = 'You forgot to enter your email address.';
+	} else {
+		$email = mysqli_real_escape_string($dbc, trim($_POST['email']));
+	}
+	
+	if (empty($errors)) { // If everything's OK.
+
+		$phone_1 = mysqli_real_escape_string($dbc, trim(strip_tags($_POST['phone_1'])));
+		$phone_2 = mysqli_real_escape_string($dbc, trim(strip_tags($_POST['phone_2'])));
+		$pub_type = mysqli_real_escape_string($dbc, trim(strip_tags($_POST['pub_type'])));
+		$serv_type = mysqli_real_escape_string($dbc, trim(strip_tags($_POST['servant_type'])));		
+	
+		//  Test for unique email address:
+		$q = "SELECT pubs_id FROM user_sec WHERE email='$email' AND pubs_id != $pubs_id";
+		$r = @mysqli_query($dbc, $q);
+		if (mysqli_num_rows($r) == 0) {
+
+			// Make the query:
+			$q = "UPDATE pubs SET first_name='$first_name', last_name='$last_name', email='$email', phone_1='$phone_1', phone_2='$phone_2', pub_type_id='$pub_type', servant_type_id='$serv_type' WHERE pubs_id={$_POST['pubs_id']} LIMIT 1";
+			$r = @mysqli_query ($dbc, $q);
+			if (mysqli_affected_rows($dbc) == 1) { // If it ran OK.
+
+				// Print a message:
+				echo '<p>The user has been edited.</p>';	
+				
+			} else { // If it did not run OK.
+				echo '<p class="error">The user could not be edited due to a system error. We apologize for any inconvenience.</p>'; // Public message.
+				echo '<p>' . mysqli_error($dbc) . '<br />Query: ' . $q . '</p>'; // Debugging message.
+			}
+				
+		} else { // Already registered.
+			echo '<p class="error">The email address has already been registered.</p>';
+		}
+		
+	} else { // Report the errors.
+
+		echo '<p class="error">The following error(s) occurred:<br />';
+		foreach ($errors as $msg) { // Print each error.
+			echo " - $msg<br />\n";
+		}
+		echo '</p><p>Please try again.</p>';
+	
+	} // End of if (empty($errors)) IF.
+
+} // End of submit conditional.
+
+// Always show the form...
+
+// Retrieve the user's information:
+$q = "SELECT * FROM pubs WHERE pubs_id={$pubs_id}"; //{$_GET['pubs_id']}";		
+$r = @mysqli_query ($dbc, $q);
+//if ($r = mysqli_query($dbc, $q)) { // Run the query.
+if (mysqli_num_rows($r) == 1) { // Valid user ID, show the form.
+
+	// Get the user's information:
+	$row = mysqli_fetch_array ($r);
+	
+	
+	// Create the form:
+	echo '<form action="edit_pub.php" method="post">
+	<p>First name: <input type="text" name="f_name" size="30" maxsize="30" value="' . htmlentities($row['first_name']) . '" /></p>
+	<p>Last name: <input type="text" name="l_name" size="30" maxsize="30" value="' . htmlentities($row['last_name']) . '" /></p>
+	<p>E-mail: <input type="text" name="email" size="30" maxsize="30" value="' . htmlentities($row['email']) . '" /></p>
+	<p>Phone 1: <input type="text" name="phone_1" size="30" maxsize="30" value="' . htmlentities($row['phone_1']) . '" /></p>
+	<p>Phone 2: <input type="text" name="phone_2" size="30" maxsize="30" value="' . htmlentities($row['phone_2']) . '" /></p>
+	<p>Publisher Type: <select name="pub_type">
+			<option name="pub_type" value="' . htmlentities($row['pub_type_id']) . '">' . htmlentities($row['Publisher Type']) . '</option>
+			<option name="pub_type" value="1">Pioneer publisher</option>
+			<option name="pub_type" value="2">Baptized publisher</option>
+			<option name="pub_type" value="3">Unbaptized publisher</option>
+			<option name="pub_type" value="4">Inactive publisher</option>
+			</select>
+			<p>
+	<p>Servant Type: <select name="serv_type">
+			<option name="serv_type" value="' . htmlentities($row['servant_type_id']) . '">' . htmlentities($row['Servant Type']) . '</option>
+			<option name="serv_type" value="1">Elder</option>
+			<option name="serv_type" value="2">Ministerial Servant</option>
+			<option name="serv_type" value="3">N/A</option>
+			</select>
+			<p>
+	<input type="hidden" name="id" value="' . $_GET['pubs_id'] . '" />
+	<input type="submit" name="submit" value=" Submit " />
+	</form>';
+
+} else { // Not a valid user ID.
+	echo '<p class="error">This page has been accessed in error1.</p>';
+}
+
+mysqli_close($dbc);
+		
+include ('include/footer.html');
+?>

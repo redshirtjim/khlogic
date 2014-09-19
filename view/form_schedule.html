@@ -1,0 +1,130 @@
+<div class="main-schedule">
+<h1><?php echo $back_arrow . $date . $forward_arrow; ?></h1>
+<h4>Congregation Bible Study <?php echo $midweek . $cbs_edit_btn; ?></h4>
+<div class="table-responsive">
+	<table class="table">
+		<tr>
+		<td width="20%">Opening Prayer:</td width="80%"><td><?php echo $row_open_prayer['Name']; ?></td>
+		</tr><tr>
+		<td width="20%">Overseer:</td><td width="80%"><?php echo $row_overseer['Name']; ?></td>
+		</tr><tr>
+		<td width="20%">Reader:</td><td width="80%"><?php echo $row_reader['Name']; ?></td>
+		</tr><tr>
+		<td width="20%">Material:</td><td width="80%"><?php echo $cbs; ?></td>
+		</tr>
+	</table>
+</div>
+<h4>Theocratic Ministry School <?php echo $midweek . $tms_edit_btn; ?></h4>
+<div class="table-responsive">
+	<table class="table"><tr>
+		<td width="20%">Bible Highlights:</td><td width="20%"><?php echo $row_highlights['Name']?></td>
+		<td width="60%"><i><?php echo $bible_read; ?></i></td>
+		</tr>
+	</table>
+</div>
+<div class="table-responsive">
+	<table class="table" >
+		<tr><th width="10%"></th><th width="150">Main School</th><th width="<?php echo $col_wid_2; ?>"><?php echo $sec_hall_header; ?></th><th width="<?php echo $col_wid_3; ?>" ><?php echo $third_hall_header; ?></th><th></th></tr><tr>
+		<td width="10%">No. 1</td>
+		<td width="20%"><?php echo $row_main_1['Name']; ?></td>
+		<td width="20%"><?php echo $sec_hall_no1; ?></td>
+		<td width="50%"><i><?php echo $no_1; ?></i></td>
+		</tr><tr>
+		<td width="10%">No. 2</td>
+		<td width="20%"><?php echo $row_main_2['Name']; ?><br><?php echo $row_main_2_hh['Name']; ?></td>
+		<td width="20%"><?php echo $sec_hall_no2; ?></td>
+		<td width="50%"><i><?php echo $no_2; ?></i></td>
+		</tr><tr>
+		<td width="10%">No. 3</td>
+		<td width="20%"><?php echo $main_hall_no3; ?></td>
+		<td width="20%"><?php echo $sec_hall_no3; ?></td>
+		<td width="50%"><i><?php echo $no_3; ?></i></td>
+		</tr>
+	</table>
+</div>
+<h4>Service Meeting <?php echo $midweek . $sm_edit_btn; ?></h4>
+<div class="table-responsive">
+	<table class="table"><tr>
+		<td width="20%"><?php echo $row_part_1['Name']; ?></td><td width="80%"><i><?php echo $sm_1; ?></i></td>
+		</tr><tr>
+		<td width="20%"><?php echo $row_part_2['Name']; ?></td><td width="80%"><i><?php echo $sm_2; ?></i></td>
+		</tr><tr>
+		<td width="20%"><?php echo $row_part_3['Name']; ?></td><td width="80%"><i><?php echo $sm_3; ?></i></td>
+		</tr>
+		<tr>
+		<td width="20%" >Closing Prayer:</td><td width="80%"><?php echo $row_close_prayer['Name']; ?></td></tr>
+	</table>
+</div>
+<h4>Public Meeting <?php echo $sunday . $pm_edit_btn; ?></h4>
+<div class="table-responsive">
+	<table class="table"><tr>
+		<td width="28%">Chairman:</td><td width="72%"><?php echo $row_chairman['Name']; ?></td>
+		</tr><tr>
+		<td width="28%">Public Speaker:</td><td width="72%"><?php echo $speaker; ?></td>
+		</tr><tr>
+		<td width="28%">Congregation:</td><td width="72%"><?php echo $cong; ?></td>
+		</tr><tr>
+		<td width="28%">Talk Theme:</td><td width="72%"><i><?php echo $theme; ?></i></td>
+		</tr><tr>
+		<td width="28%">Watchtower Reader:</td><td width="72%"><?php echo $row_wtreader['Name']; ?></td>
+		</tr><tr>
+		<td width="28%">Watchtower Article:</td><td width="72%"><i><?php echo $wt_study; ?></i></td>
+		</tr>
+	<?php if ($out_speaker == 1) { ?>
+		<td width="28%">Outgoing Speaker:</td><td width="72%"><?php echo $row_out_speaker['Name']; ?></td>
+		</tr><tr>
+		<td width="28%">Congregation:</td><td width="72%"><?php echo $outcong; ?></td>
+		</tr><tr>
+		<td width="28%">Talk Theme:</td><td width="72%"><i><?php echo $outtheme; ?></i></td>
+		</tr>
+		<?php if ($out_speaker_2 == 1) { ?>
+			<td width="28%">Outgoing Speaker:</td><td width="72%"><?php echo $row_out_speaker_2['Name']; ?></td>
+			</tr><tr>
+			<td width="28%">Congregation:</td><td width="72%"><?php echo $outcong_2; ?></td>
+			</tr><tr>
+			<td width="28%">Talk Theme:</td><td width="72%"><i><?php echo $outtheme_2; ?></i></td>
+			</tr>
+			<?php if ($out_speaker_3 == 1) { ?>
+				<td width="28%">Outgoing Speaker:</td><td width="72%"><?php echo $row_out_speaker_3['Name']; ?></td>
+				</tr><tr>
+				<td width="28%">Congregation:</td><td width="72%"><?php echo $outcong_3; ?></td>
+				</tr><tr>
+				<td width="28%">Talk Theme:</td><td width="72%"><i><?php echo $outtheme_3; ?></i></td>
+				</tr>
+	<?php	}
+		}
+	} ?>
+	</table>	
+</div>
+<br pagebreak="true"/>
+<h4>Attendants<?php echo $att_edit_btn; ?> / Sound & Stage<?php echo $ss_edit_btn; ?> <?php echo $midweek; ?></h4>
+<div class="table-responsive">
+	<table class="table"><tr>
+		<td width="10%">Attendant:</td><td width="20%"> <?php echo $row_attend1_meet1['Name']; ?></td>
+		<td width="10%">Panel:</td><td width="20%"> <?php echo $row_sound_meet1['Name']; ?></td>
+		<td width="10%">Mic:</td><td width="20%"> <?php echo $row_mic1_meet1['Name']; ?></td>
+		</tr><tr>
+		<td width="10%">Attendant:</td><td width="20%"> <?php echo $row_attend2_meet1['Name']; ?></td>
+		<td width="10%">Stage:</td><td width="20%"> <?php echo $row_stage_meet1['Name']; ?></td>
+		<td width="10%">Mic:</td><td width="20%"> <?php echo $row_mic2_meet1['Name']; ?></td>
+		</tr>
+	</table>
+</div>
+<h4>Attendants<?php echo $att_edit_btn; ?> / Sound & Stage<?php echo $ss_edit_btn; ?> <?php echo $sunday; ?></h4>
+<div class="table-responsive">
+	<table class="table"><tr>
+		<td width="10%">Attendant:</td><td width="20%"> <?php echo $row_attend1_meet2['Name']; ?></td>
+		<td width="10%">Panel:</td><td width="20%"> <?php echo $row_sound_meet2['Name']; ?></td>
+		<td width="10%">Mic:</td><td width="20%"> <?php echo $row_mic1_meet2['Name']; ?></td>
+		</tr><tr>
+		<td width="10%">Attendant:</td><td width="20%"> <?php echo $row_attend2_meet2['Name']; ?></td>
+		<td width="10%">Stage:</td><td width="20%"> <?php echo $row_stage_meet2['Name']; ?></td>
+		<td width="10%">Mic:</td><td width="20%"> <?php echo $row_mic2_meet2['Name']; ?></td>
+		</tr>
+	</table>
+</div>
+</div>
+<?php if((strpos($host, 'khlogic.org/index.php') !== false)) { ?>
+	<a href="schedule_pdf.php?monday=<?php echo $monday; ?>" target="blank"><span class="glyphicon glyphicon-file"></span></a>
+<?php
+	} ?>

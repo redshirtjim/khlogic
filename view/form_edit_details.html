@@ -1,0 +1,97 @@
+<form class="form-horizontal" role="form" action="<?php echo $page; ?>" method="post">
+	<h3>Material for week of <?php echo $date; ?> - <?php echo $sunday; ?></h3>
+	<h4>Congregation Bible Study</h4>
+	<div class="form-group">
+		<!--<label for="song_1">Song 1</label>
+		<input type="text" class="form-control" name="song_1" id="song_1" value="<?php echo htmlentities($song_1); ?>" />-->
+		<label for="cbs" class="col-sm-3 control-label">Study Material</label>
+		<div class="col-sm-4">
+			<input type="text" class="form-control input-sm" name="cbs" id="cbs" value="<?php echo htmlentities($cbs); ?>" />
+		</div>
+		<label for="cbs_url" class="col-sm-1 control-label">URL</label>
+		<div class="col-sm-4">
+			<input type="text" class="form-control input-sm" name="cbs_url" id="cbs_url" value="<?php echo htmlentities($cbs_url); ?>" />
+		</div>
+	</div>
+	<h4>Theocratic Ministry School</h4>
+	<div class="form-group">
+		<label for="bible_read" class="col-sm-3 control-label">Bible Reading</label>
+		<div class="col-sm-9">
+			<input type="text" class="form-control input-sm" name="bible_read" id="bible_read" value="<?php echo htmlentities($bible_read); ?>" />
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="no_1" class="col-sm-3 control-label">No. 1</label>
+		<div class="col-sm-9">
+			<input type="text" class="form-control input-sm" name="no_1" id="no_1" value="<?php echo htmlentities($no_1); ?>" />
+		</div>
+	</div>
+	<div class="form-group">	
+		<label for="no_2" class="col-sm-3 control-label">No. 2</label>
+		<div class="col-sm-9">
+			<input type="text" class="form-control input-sm" name="no_2" id="no_2" value="<?php echo htmlentities($no_2); ?>" />
+		</div>
+		<label for="no_2_source" class="col-sm-3 control-label">Source</label>
+		<div class="col-sm-4">
+			<input type="text" class="form-control input-sm" name="no_2_source" id="no_2_source" value="<?php echo htmlentities($no_2_source); ?>" />
+		</div>
+		<label for="no_2_url" class="col-sm-1 control-label">URL</label>
+		<div class="col-sm-4">
+			<input type="text" class="form-control input-sm" name="no_2_url" id="no_2_url" value="<?php echo htmlentities($no_2_url); ?>" />
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="no_3" class="col-sm-3 control-label">No. 3</label>
+		<div class="col-sm-9">
+			<input type="text" class="form-control input-sm" name="no_3" id="no_3" value="<?php echo htmlentities($no_3); ?>" />
+		</div>
+		<label for="no_3_source" class="col-sm-3 control-label">Source</label>
+		<div class="col-sm-4">
+			<input type="text" class="form-control input-sm" name="no_3_source" id="no_3_source" value="<?php echo htmlentities($no_3_source); ?>" />
+		</div>
+		<label for="no_3_url" class="col-sm-1 control-label">URL</label>
+		<div class="col-sm-4">
+			<input type="text" class="form-control input-sm" name="no_3_url" id="no_3_url" value="<?php echo htmlentities($no_3_url); ?>" />
+		</div>
+	</div>
+	<h4>Service Meeting</h4>
+	<div class="form-group">
+		<!--<label for="song_2">Song 2</label>
+		<input type="text" class="form-control" name="song_2" id="song_2" value="<?php echo htmlentities($song_2); ?>" />-->
+		<label for="sm_1" class="col-sm-3 control-label">Part 1</label>
+		<div class="col-sm-9">
+			<input type="text" class="form-control input-sm" name="sm_1" id="sm_1" value="<?php echo htmlentities($sm_1); ?>" />
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="sm_2" class="col-sm-3 control-label">Part 2</label>
+		<div class="col-sm-9">
+			<input type="text" class="form-control input-sm" name="sm_2" id="sm_2" value="<?php echo htmlentities($sm_2); ?>" />
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="sm_3" class="col-sm-3 control-label">Part 3</label>
+		<div class="col-sm-9">
+			<input type="text" class="form-control input-sm" name="sm_3" id="sm_3" value="<?php echo htmlentities($sm_3); ?>" />
+		</div>
+		<!--<label for="song_3">Song 3</label>
+		<input type="text" class="form-control" name="song_3" id="song_3" value="<?php echo htmlentities($song_3); ?>" />-->
+	</div>
+	<h4>Public Meeting</h4>
+	<div class="form-group">
+		<!--<label for="ptws_song_1">Song 1</label>
+		<input type="text" class="form-control" name="ptws_song_1" id="ptws_song_1" value="<?php echo htmlentities($ptws_song_1); ?>" />
+		<label for="ptws_song_2">Song 2</label>
+		<input type="text" class="form-control" name="ptws_song_2" id="ptws_song_2" value="<?php echo htmlentities($ptws_song_2); ?>" />-->
+		<label for="wt_study" class="col-sm-3 control-label">Article</label>
+		<div class="col-sm-9">
+			<input type="text" class="form-control input-sm" name="wt_study" id="wt_study" value="<?php echo htmlentities($wt_study); ?>" />
+		</div>
+		<!--<label for="ptws_song_3">Song 3</label>
+		<input type="text" class="form-control" name="ptws_song_3" id="ptws_song_3" value="<?php echo htmlentities($ptws_song_3); ?>" />-->
+	</div>
+	<div style="width:100%; height:34px">
+	<input style="float: right;" type="submit" class="btn btn-primary" name="submit" value="Submit" />
+	</div>
+</form>
+<p class="bg-primary"><?php echo $details_msg; ?></p>

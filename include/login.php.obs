@@ -1,0 +1,72 @@
+<?php // - login.php
+		//Login page for app. It uses templates to create the layout.
+		/* This page lets people log into the site (in theory). */
+
+
+
+		// Check if the form has been submitted:
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+			// Handle the form:
+	if ( (!empty($_POST['email'])) && (!empty($_POST['password'])) ) {
+		$email = $_POST['email'];
+		$password = $_POST['password'];
+		require('db_conn_sel.php');
+		$query = "SELECT user_id FROM user_sec WHERE email='$email' AND passw=SHA1($password)";
+						
+			if ($r = mysqli_query($dbc, $query)) { // Run the query.
+				$row = mysqli_fetch_array($r); // Retrieve the information.
+				$num = @mysqli_num_rows($r);
+
+					if ($num == 1) { // Match was made.
+
+					// Start session:
+					session_start();
+					$_SESSION['email'] = $email;
+					$_SESSION['loggedin'] = time();
+
+					// Redirect to welcome page:
+					ob_end_clean(); //Destroy the buffer
+					header('Location: index.php');
+					exit();
+					
+					} else { // Incorrect!
+						print '<h3>The submitted email address and password do not match those on file!<br /><a href="index.php">Try again</a></h3>';
+						// I eventually want to enable a pop up msg window
+						// Redirect to index.php
+						//ob_end_clean(); //Destroy the buffer
+						//header('Location: index.php'); // Redirect to index.php
+						//exit();
+						}
+			} else {
+				print 'Query could not be run.';
+				echo '<p>' . mysqli_error($dbc) . '<br /><br />Query: ' . $query . '</p>';
+			}
+	} else { // Forgot a field.
+		//print '<h3>Please make sure you enter both an email address and a password!<br /><a href="index.php">Try again</a></h3>';
+		//include('js/login_alert.js');
+		// I eventually want to enable a pop up msg window
+		// Redirect to index.php
+		//ob_end_clean(); //Destroy the buffer
+		//header('Location: index.php'); // Redirect to index.php
+		//exit();
+		}
+} else { // Display the form.
+	print '<form action="index.php" method="post">
+	<table>
+	<tr>
+	<td>Email Address:&nbsp</td>
+	<td><input type="text" name="email" size="20" /></td>
+	</tr>
+	<tr>
+	<td>Password:</td>
+	<td><input type="password" name="password" size="20" /></td>
+	</tr>
+	</table>
+	<br>
+	<p><input type="submit" name="submit" value=" Login " /></p>
+	</form>';
+	print '<p><a href="register.php"><br>Register</a></p>';
+	}
+	
+?>

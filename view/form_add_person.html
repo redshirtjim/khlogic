@@ -1,0 +1,153 @@
+<form action="add_person.php" method="post" class="form-horizontal" role="form">
+	<div class="form-group">
+		<div class="col-sm-2"></div>
+		<div class="col-sm-10">
+			<h3>Add a publisher</h3>
+			<?php echo $add_another; ?>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="Select3" class="col-sm-2 control-label">Br./Sr.</label>
+		<div class="col-sm-10">
+			<select type="text" class="form-control" id="Select3" name="gender" placeholder="Br./Sr.">
+				<option name="gender" value="Select">Select</option>
+				<option name="gender" value="Br.">Br.</option>
+				<option name="gender" value="Sr.">Sr.</option>
+			</select>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="inputText3" class="col-sm-2 control-label">First Name</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="inputText3" name="f_name" placeholder="First Name">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="inputText3" class="col-sm-2 control-label">Last Name</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="inputText3" name="l_name" placeholder="Last Name">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="inputEmail" class="col-sm-2 control-label">E-mail</label>
+		<div class="col-sm-10">
+			<input type="email" class="form-control" id="inputEmail" name="email" placeholder="E-mail">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="inputText3" class="col-sm-2 control-label">Phone</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="inputText3" name="phone1" placeholder="Phone">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="Select3" class="col-sm-2 control-label">Publisher Type</label>
+		<div class="col-sm-10">
+			<select type="text" class="form-control" id="Select3" name="pub_type_id" placeholder="Publisher Type">
+				<option name="pub_type_id" value="Select">Select</option>
+				<option name="pub_type_id" value="1">Pioneer publisher</option>
+				<option name="pub_type_id" value="2">Baptized publisher</option>
+				<option name="pub_type_id" value="3">Unbaptized publisher</option>
+				<option name="pub_type_id" value="4">Inactive publisher</option>
+			</select>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="Select3" class="col-sm-2 control-label">Servant Type</label>
+		<div class="col-sm-10">
+			<select type="text" class="form-control" id="Select3" name="servant_type_id" placeholder="Servant Type">
+				<option name="servant_type_id" value="Select">Select</option>
+				<option name="servant_type_id" value="1">Elder</option>
+				<option name="servant_type_id" value="2">Ministerial Servant</option>
+				<option name="servant_type_id" value="3">N/A</option>
+			</select>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-sm-2"></div>
+		<div class="col-sm-10">
+			<label class="control-label">Publisher may be used for </label>
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" name="public_speaker" value="1" <?php if ($public_speaker_checked == 1) echo 'checked'; ?> /> Public Speaker
+				</label>
+			</div>	
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" name="chairman" value="1" <?php if ($chairman_checked == 1) echo 'checked'; ?>/> Chairman
+				</label>
+			</div>	
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" name="reader" value="1" <?php if ($reader_checked == 1) echo 'checked'; ?>/> Reader
+				</label>
+			</div>	
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" name="overseer" value="1" <?php if ($overseer_checked == 1) echo 'checked'; ?>/> Overseer
+				</label>
+			</div>	
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" name="prayer" value="1" <?php if ($prayer_checked == 1) echo 'checked'; ?>/> Prayer
+				</label>
+			</div>	
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" name="bible_high" value="1" <?php if ($bible_high_checked == 1) echo 'checked'; ?>/> Bible Highlights
+				</label>
+			</div>	
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" name="no_1" value="1" <?php if ($no_1_checked == 1) echo 'checked'; ?>/> Number 1 Talk
+				</label>
+			</div>	
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" name="no_2" value="1" <?php if ($no_2_checked == 1) echo 'checked'; ?>/> Number 2 Talk
+				</label>
+			</div>	
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" name="no_3" value="1" <?php if ($no_3_checked == 1) echo 'checked'; ?>/> Number 3 Talk
+				</label>
+			</div>	
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" name="householder" value="1" <?php if ($householder_checked == 1) echo 'checked'; ?>/> Householder
+				</label>
+			</div>	
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" name="serv_meet" value="1" <?php if ($serv_meet_checked == 1) echo 'checked'; ?>/> Service Meeting Talks
+				</label>
+			</div>	
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" name="attend" value="1" <?php if ($attend_checked == 1) echo 'checked'; ?>/> Attendant
+				</label>
+			</div>	
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" name="sound_panel" value="1" <?php if ($sound_panel_checked == 1) echo 'checked'; ?>/> Sound Panel
+				</label>
+			</div>	
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" name="stage" value="1" <?php if ($stage_checked == 1) echo 'checked'; ?>/> Stage
+				</label>
+			</div>	
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" name="mic" value="1" <?php if ($mic_checked == 1) echo 'checked'; ?>/> Microphone
+				</label>
+			</div>	
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" name="grounds_keeper" value="1" <?php if ($grounds_keeper_checked == 1) echo 'checked'; ?>/> Grounds Keeper
+				</label>
+			</div>
+			<button type="submit" class="btn btn-default">Submit</button>
+		</div>
+	</div>
+</form>

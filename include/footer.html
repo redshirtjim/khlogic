@@ -1,0 +1,27 @@
+		<!-- END CHANGEABLE CONTENT -->
+	</div><!--content-->
+<?php
+function auto_copyright($year = 'auto'){
+	if(intval($year) == 'auto') {
+		$year = date('Y');
+	}
+	if(intval($year) == date('Y')) {
+		echo intval($year);
+	}
+	if(intval($year) < date('Y')) {
+		echo intval($year) . ' - ' . date('Y');
+	}
+	if(intval($year) > date('Y')) {
+		echo date('Y');
+	}
+}
+?>	
+	<div id="footer" class="modal-footer">
+		<p class="text-muted">Kingdom Hall Logic &copy;<?php auto_copyright('2012'); ?>.<br>Icons from <a href="http://glyphicons.com/" target="blank">GLYPHIC<span id="glyphicon-footer" class="glyphicon glyphicon-plus-sign"></span>NS.com</a></p>
+	</div><!--footer-->
+ </div><!--container-->
+ </body>
+</html>
+<?php
+ob_end_flush();																			// Send the buffer to the browswer and turn off buffering
+?>

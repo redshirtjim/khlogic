@@ -1,0 +1,19 @@
+<?php
+
+print '<form action="index.php" method="post">
+			<table>
+			<tr>
+			<td>Username or Email Address:</td>
+			<td><input type="text" name="email" size="20" /></td>
+			</tr>
+			<tr>
+			<td>Password:</td>
+			<td><input type="password" name="password" size="20" /></td>
+			</tr>
+			</table>
+			<br>
+			<p><input type="submit" name="submit" value=" Login " /></p>
+			</form>';
+print '<p><a href="register.php"><br>Register</a></p>';
+
+?>

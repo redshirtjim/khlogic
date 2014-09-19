@@ -1,0 +1,65 @@
+	<p>Assign Congregation Bible Study for the week of <?php echo $date; ?><br><br><b><?php echo $midweek; ?></b></p>
+	<table>
+	<form action="<?php echo $page; ?>" method="post">
+	<tr>
+	<td>Material:</td>
+	<td><?php echo $cbs; ?></td>
+	</tr>
+	<tr>
+	<td>Overseer:</td>
+	<td><select name="overseer" onchange="this.form.submit()">
+	<?php																					// If the query returns a record matching the date, assignment type and meeting, then use it for the selected option and also include the all the other names or else just show all the names in the option. Also the option assigns the user ID to its value, which is used in the POST check conditionals
+	if ($num_row_overseer = 1) {
+		echo '<option value="'.$row_overseer['user_id'].'" selected>'.$row_overseer['Name'].'</option>';
+		while ($row1 = mysqli_fetch_array($r1)) {
+			echo '<option value="'.$row1['user_id'].'">'.$row1['Name'].'</option>';
+		}
+	} else {
+		while ($row3 = mysqli_fetch_array($r3)) {
+			echo '<option value="'.$row1['user_id'].'">'.$row1['Name'].'</option>';
+		}
+	}
+	?>
+	</select></td>
+	</tr>
+	</form>
+	<form action="<?php echo $page; ?>" method="post">
+	<tr>
+	<td>Reader:</td>
+	<td><select name="reader" onchange="this.form.submit()">
+	<?php																					// If the query returns a record matching the date, assignment type and meeting, then use it for the selected option and also include the all the other names or else just show all the names in the option. Also the option assigns the user ID to its value, which is used in the POST check conditionals
+	if ($num_row_reader = 1) {
+		echo '<option value="'.$row_reader['user_id'].'" selected>'.$row_reader['Name'].'</option>';
+		while ($row2 = mysqli_fetch_array($r2)) {
+			echo '<option value="'.$row2['user_id'].'">'.$row2['Name'].'</option>';
+		}
+	} else {
+		while ($row1 = mysqli_fetch_array($r1)) {
+		echo '<option value="'.$row2['user_id'].'">'.$row2['Name'].'</option>';
+		}
+	}
+	?>
+	</select></td>
+	</tr>
+	</form>
+	<form action="<?php echo $page; ?>" method="post">
+	<tr>
+	<td>Opening Prayer:</td>
+	<td><select name="open_prayer" onchange="this.form.submit()">
+	<?php
+	if ($num_row_open_prayer = 1) {
+		echo '<option value="'.$row_open_prayer['user_id'].'" selected>'.$row_open_prayer['Name'].'</option>';
+		while ($row3 = mysqli_fetch_array($r3)) {
+			echo '<option value="'.$row3['user_id'].'">'.$row3['Name'].'</option>';
+		}
+	} else {
+		while ($row3 = mysqli_fetch_array($r3)) {
+			echo '<option value="'.$row3['user_id'].'">'.$row3['Name'].'</option>';
+		}
+	}
+	?>
+	</select></td>
+	</tr>
+	</form>
+	</table>
+	<p class="error"><?php echo $conflict_msg; ?></p>

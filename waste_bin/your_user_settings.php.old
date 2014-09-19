@@ -1,0 +1,69 @@
+<?php // user_settings.php 
+/* This script shows a user's settings. */
+
+session_start();
+
+//Include the header:
+require ('include/config.inc.php'); // Require the config
+include('include/header.html');
+
+// Check for form submission:
+//if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if (isset ($_SESSION)) {
+
+	require ('db_conn_sel.php'); // Connect to the db.
+
+	// Define the query.
+	$query = "SELECT * FROM users WHERE email='{$_SESSION['email']}'";
+	if ($r = mysqli_query($dbc, $query)) { // Run the query.
+	
+		$row = mysqli_fetch_array($r); // Retrieve the information.
+		
+		// Make the form:
+		print '<p>
+		<table>
+		<tr>
+		<td><h3>' . htmlentities($row['first_name']) . ' ' . htmlentities($row['last_name']) . ' ' . $_SESSION['user_id'] . '</h3></td>
+		</tr><tr>
+		<td>E-mail: </td>
+		<td><p>' . htmlentities($row['email']) . '</p></td>
+		</tr><tr>
+		<td>Phone 1: </td>
+		<td><p>' . htmlentities($row['phone_1']) . '</p></td>
+		</tr><tr>
+		<td>Phone 2: </td>
+		<td><p>' . htmlentities($row['phone_2']) . '</p></td>
+		</tr>
+		</table></p>';
+		print '<p><a href="edit_your_user_settings.php">Edit Settings</a><br>';
+		print '<a href="change_password.php">Change Your Password</a></p>';
+
+
+	} else { // Couldn't get the information.
+		print '<p style="color: red;">Could not retrieve the publisher entry because:<br />' . mysql_error($dbc) . '.</p><p>The query being run was: ' . $query . '</p>';
+	}
+
+} else {
+		print 'No one is logged in.';
+		/* Make the form:
+		print '<form action="your_user_settings.php" method="post">
+		<table>
+		<tr>
+		<td>E-mail:</td>
+		<td><input type="email" name="email" size="30" /></td>
+		</tr>
+		<tr>
+		</table>';
+
+	print 
+	'<input type="submit" name="submit" value=" Submit " />
+	</form>';*/
+
+} // End of main IF.
+
+// Close the connection.
+Include('db_close.php');
+
+//Include the footer:
+include('include/footer.html');
+?>

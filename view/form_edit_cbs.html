@@ -1,0 +1,21 @@
+<form role="form" action="<?php echo $page; ?>" method="post">
+	<h3>Week of <?php echo $date; ?></h3>
+	<h4>Congregation Bible Study <?php echo $midweek; ?></h4>
+	<div class="form-group">
+		<label for="open_prayer">Opening Prayer</label>
+		<select class="form-control input-sm" id="open_prayer" name="open_prayer" onchange="this.form.submit()"><?php echo $opt_3; ?></select>
+	</div>
+</form>
+<form role="form" action="<?php echo $page; ?>" method="post">
+	<div class="form-group">
+		<label for="overseer">Overseer</label>
+		<select class="form-control input-sm" id="overseer" name="overseer" onchange="this.form.submit()"><?php echo $opt_1; ?></select>
+	</div>
+</form>
+<form role="form" action="<?php echo $page; ?>" method="post">
+	<div class="form-group">
+		<label for="reader">Reader &nbsp&nbsp&nbsp<a href="<?php echo $cbs_url; ?>" target="_blank"><?php echo $cbs; ?></a></label>
+		<select class="form-control input-sm" id="reader" name="reader" onchange="this.form.submit()"><?php echo $opt_2; ?></select>
+	</div>
+</form>		
+<p class="bg-primary"><?php echo $conflict_msg; ?></p>

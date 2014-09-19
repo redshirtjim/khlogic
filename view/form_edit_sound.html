@@ -1,0 +1,52 @@
+<form role="form" action="<?php echo $page; ?>" method="post">
+	<h3>Week of <?php echo $date; ?></h3>
+	<h4>Bible Study - Theo Min School - Service Meeting <?php echo $midweek; ?></h4>
+	<div class="form-group">
+		<label for="sound_meet1">Sound Panel</label>
+		<select class="form-control input-sm" id="sound_meet1" name="sound_meet1" onchange="this.form.submit()"><?php echo $opt_1; ?></select>
+	</div>
+</form>
+<form role="form" action="<?php echo $page; ?>" method="post">
+	<div class="form-group">
+		<label for="stage_meet1">Stage</label>
+		<select class="form-control input-sm" id="stage_meet1" name="stage_meet1" onchange="this.form.submit()"><?php echo $opt_2; ?></select>
+	</div>
+</form>		
+<form role="form" action="<?php echo $page; ?>" method="post">
+	<div class="form-group">
+		<label for="mic1_meet1">Microphone</label>
+		<select class="form-control input-sm" id="mic1_meet1" name="mic1_meet1" onchange="this.form.submit()"><?php echo $opt_3; ?></select>
+	</div>
+</form>
+<form role="form" action="<?php echo $page; ?>" method="post">
+	<div class="form-group">
+		<label for="mic2_meet1">Microphone</label>
+		<select class="form-control input-sm" id="mic2_meet1" name="mic2_meet1" onchange="this.form.submit()"><?php echo $opt_4; ?></select>
+	</div>
+</form>
+<form role="form" action="<?php echo $page; ?>" method="post">
+	<h4>Public Meeting - Watchtower Study <?php echo $midweek; ?></h4>
+	<div class="form-group">
+		<label for="sound_meet2">Sound Panel</label>
+		<select class="form-control input-sm" id="sound_meet2" name="sound_meet2" onchange="this.form.submit()"><?php echo $opt_5; ?></select>
+	</div>
+</form>
+<form role="form" action="<?php echo $page; ?>" method="post">
+	<div class="form-group">
+		<label for="stage_meet2">Stage</label>
+		<select class="form-control input-sm" id="stage_meet2" name="stage_meet2" onchange="this.form.submit()"><?php echo $opt_6; ?></select>
+	</div>
+</form>		
+<form role="form" action="<?php echo $page; ?>" method="post">
+	<div class="form-group">
+		<label for="mic1_meet2">Microphone</label>
+		<select class="form-control input-sm" id="mic1_meet2" name="mic1_meet2" onchange="this.form.submit()"><?php echo $opt_7; ?></select>
+	</div>
+</form>
+<form role="form" action="<?php echo $page; ?>" method="post">
+	<div class="form-group">
+		<label for="mic2_meet2">Microphone</label>
+		<select class="form-control input-sm" id="mic2_meet2" name="mic2_meet2" onchange="this.form.submit()"><?php echo $opt_8; ?></select>
+	</div>
+</form>
+<p class="bg-primary"><?php echo $conflict_msg; ?></p>

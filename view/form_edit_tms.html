@@ -1,0 +1,356 @@
+<h3>Week of <?php echo $date; ?></h3>
+<h4>Theocratic Ministry School <?php echo $midweek; ?></h4>
+<div class="clearfix visible-xs-block" style="float:right;">
+	<form role="form" action="<?php echo $page; ?>" method="post">
+		<div class="col-md-12">
+			<div class="form-group">
+				<label for="no_schools"># of Schools</label>
+				<select class="form-control input-sm" id="no_schools" name="no_schools" onchange="this.form.submit()"><?php echo $opt_no_schools ?></select>
+			</div>
+		</div>
+	</form>
+	<form action="<?php print $page; ?>" method="post">
+		<div class="col-md-12">
+			<div class="form-group">
+				&nbsp&nbsp<input type="radio" name="sort" value="alpha" onchange="this.form.submit()" <?php if (isset($_POST['sort']) && $_POST['sort'] == 'alpha') { echo 'checked="checked"'; } else { echo 'checked="checked"'; } ?> /> View alphbetically by last name &nbsp&nbsp</input><br>
+				&nbsp&nbsp<input type="radio" name="sort" value="date" onchange="this.form.submit()" <?php if (isset($_POST['sort']) && $_POST['sort'] == 'date') { echo 'checked="checked"'; } ?> /> View by date last assigned </input>
+			</div>	
+		</div>
+	</form>
+</div>
+<div class="clearfix visible-xs-block" style="border: 0px solid #e1e1e8;">
+	<form role="form" action="<?php echo $page; ?>" method="post">
+		<div class="col-md-6">
+			<div class="form-group">
+				<label for="highlights">Bible Highlights <i><?php print $bible_read; ?></i></label>
+				<select class="form-control input-sm" id="highlights" name="highlights" onchange="this.form.submit()"><?php echo $opt_highlights; ?></select>
+			</div>
+		</div>
+	</form>
+	<form role="form" action="<?php echo $page; ?>" method="post">
+		<div class="col-md-6">
+			<div class="form-group">
+				<label for="highlights_study">Study</label>
+				<select class="form-control input-sm" id="highlights_study" name="highlights_study" onchange="this.form.submit()"><?php echo $opt_highlights_study; ?></select>
+			</div>
+		</div>
+	</form>
+</div>
+<div class="clearfix visible-xs-block" style="border: 1px solid #e1e1e8;">
+	<h4>&nbspMain School</h4>
+	<div class="clearfix visible-xs-block" style="background-color: #f7f7f9;">
+		<label>&nbsp&nbspNo. 1 Bible Reading <i><?php print $no_1; ?></i></label>
+		<form role="form" action="<?php echo $page; ?>" method="post">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="main_1">Student</label>
+					<select class="form-control input-sm" id="main_1" name="main_1" onchange="this.form.submit()"><?php echo $opt_main_1; ?></select>
+				</div>
+			</div>
+		</form>
+		<form role="form" action="<?php echo $page; ?>" method="post">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="main_1_study">Study</label>
+					<select class="form-control input-sm" id="main_1_study" name="main_1_study" onchange="this.form.submit()"><?php echo $opt_main_1_study; ?></select>
+				</div>
+			</div>
+		</form>
+	</div>
+	
+	<div class="clearfix visible-xs-block">
+		<label>&nbsp&nbspNo. 2 <i><?php print $no_2; ?></i></label>
+		<form role="form" action="<?php echo $page; ?>" method="post">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="main_2">Student</label>
+					<select class="form-control input-sm" id="main_2" name="main_2" onchange="this.form.submit()"><?php echo $opt_main_2; ?></select>
+				</div>
+			</div>
+		</form>
+		<form role="form" action="<?php echo $page; ?>" method="post">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="main_2_study">Study</label>
+					<select class="form-control input-sm" id="main_2_study" name="main_2_study" onchange="this.form.submit()"><?php echo $opt_main_2_study; ?></select>
+				</div>
+			</div>
+		</form>
+	</div>
+	
+	<div class="clearfix visible-xs-block">
+		<form role="form" action="<?php echo $page; ?>" method="post">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="main_2_hh">Assistant</label>
+					<select class="form-control input-sm" id=""main_2_hh" name=""main_2_hh" onchange="this.form.submit()"><?php echo $opt_main_2_hh; ?></select>
+				</div>
+			</div>
+		</form>
+		<form role="form" action="<?php echo $page; ?>" method="post">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="main_2_setting">Setting</label>
+					<select class="form-control input-sm" id="main_2_setting" name="main_2_setting" onchange="this.form.submit()"><?php echo $opt_main_2_setting; ?></select>
+				</div>
+			</div>
+		</form>
+	</div>
+	
+	<div class="clearfix visible-xs-block" style="background-color: #f7f7f9;">
+		<label>&nbsp&nbspNo. 3 <i><?php print $no_3; ?></i></label>
+		<form role="form" action="<?php echo $page; ?>" method="post">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="main_2">Student</label>
+					<select class="form-control input-sm" id="main_3" name="main_3" onchange="this.form.submit()"><?php echo $opt_main_3; ?></select>
+				</div>
+			</div>
+		</form>
+		<form role="form" action="<?php echo $page; ?>" method="post">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="main_3_study">Study</label>
+					<select class="form-control input-sm" id="main_3_study" name="main_3_study" onchange="this.form.submit()"><?php echo $opt_main_3_study; ?></select>
+				</div>
+			</div>
+		</form>
+	</div>
+	
+	<?php $sister =&is_sister($monday,$main_3); if ($sister == 1) { ?>
+	<div class="clearfix visible-xs-block" style="background-color: #f7f7f9;">
+		<form role="form" action="<?php echo $page; ?>" method="post">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="main_3_hh">Assistant</label>
+					<select class="form-control input-sm" id=""main_3_hh" name=""main_3_hh" onchange="this.form.submit()"><?php echo $opt_main_3_hh; ?></select>
+				</div>
+			</div>
+		</form>
+		<form role="form" action="<?php echo $page; ?>" method="post">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="main_3_setting">Setting</label>
+					<select class="form-control input-sm" id="main_3_setting" name="main_3_setting" onchange="this.form.submit()"><?php echo $opt_main_3_setting; ?></select>
+				</div>
+			</div>
+		</form>
+	</div>
+	<?php } ?>
+</div>
+<br>
+<?php if ($curr_school >= 2) { ?>
+<div class="clearfix visible-xs-block" style="border: 1px solid #e1e1e8;">
+	<h4>&nbspAux School</h4>
+	<div class="clearfix visible-xs-block" style="background-color: #f7f7f9;">
+		<label>&nbsp&nbspNo. 1 Bible Reading <i><?php print $no_1; ?></i></label>
+		<form role="form" action="<?php echo $page; ?>" method="post">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="second_1">Student</label>
+					<select class="form-control input-sm" id="second_1" name="second_1" onchange="this.form.submit()"><?php echo $opt_second_1; ?></select>
+				</div>
+			</div>
+		</form>
+		<form role="form" action="<?php echo $page; ?>" method="post">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="second_1_study">Study</label>
+					<select class="form-control input-sm" id="second_1_study" name="second_1_study" onchange="this.form.submit()"><?php echo $opt_second_1_study; ?></select>
+				</div>
+			</div>
+		</form>
+	</div>
+	
+	<div class="clearfix visible-xs-block">
+		<label>&nbsp&nbspNo. 2 <i><?php print $no_2; ?></i></label>
+		<form role="form" action="<?php echo $page; ?>" method="post">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="second_2">Student</label>
+					<select class="form-control input-sm" id="second_2" name="second_2" onchange="this.form.submit()"><?php echo $opt_second_2; ?></select>
+				</div>
+			</div>
+		</form>
+		<form role="form" action="<?php echo $page; ?>" method="post">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="second_2_study">Study</label>
+					<select class="form-control input-sm" id="second_2_study" name="second_2_study" onchange="this.form.submit()"><?php echo $opt_second_2_study; ?></select>
+				</div>
+			</div>
+		</form>
+	</div>
+	
+	<div class="clearfix visible-xs-block">
+		<form role="form" action="<?php echo $page; ?>" method="post">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="second_2_hh">Assistant</label>
+					<select class="form-control input-sm" id=""second_2_hh" name=""second_2_hh" onchange="this.form.submit()"><?php echo $opt_second_2_hh; ?></select>
+				</div>
+			</div>
+		</form>
+		<form role="form" action="<?php echo $page; ?>" method="post">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="second_2_setting">Setting</label>
+					<select class="form-control input-sm" id="second_2_setting" name="second_2_setting" onchange="this.form.submit()"><?php echo $opt_second_2_setting; ?></select>
+				</div>
+			</div>
+		</form>
+	</div>
+	
+	<div class="clearfix visible-xs-block" style="background-color: #f7f7f9;">
+		<label>&nbsp&nbspNo. 3 <i><?php print $no_3; ?></i></label>
+		<form role="form" action="<?php echo $page; ?>" method="post">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="second_2">Student</label>
+					<select class="form-control input-sm" id="second_3" name="second_3" onchange="this.form.submit()"><?php echo $opt_second_3; ?></select>
+				</div>
+			</div>
+		</form>
+		<form role="form" action="<?php echo $page; ?>" method="post">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="second_3_study">Study</label>
+					<select class="form-control input-sm" id="second_3_study" name="second_3_study" onchange="this.form.submit()"><?php echo $opt_second_3_study; ?></select>
+				</div>
+			</div>
+		</form>
+	</div>
+	
+	<?php $sister =&is_sister($monday,$second_3); if ($sister == 1) { ?>
+	<div class="clearfix visible-xs-block" style="background-color: #f7f7f9;">
+		<form role="form" action="<?php echo $page; ?>" method="post">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="second_3_hh">Assistant</label>
+					<select class="form-control input-sm" id=""second_3_hh" name=""second_3_hh" onchange="this.form.submit()"><?php echo $opt_second_3_hh; ?></select>
+				</div>
+			</div>
+		</form>
+		<form role="form" action="<?php echo $page; ?>" method="post">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="second_3_setting">Setting</label>
+					<select class="form-control input-sm" id="second_3_setting" name="second_3_setting" onchange="this.form.submit()"><?php echo $opt_second_3_setting; ?></select>
+				</div>
+			</div>
+		</form>
+	</div>
+	<?php } ?>
+</div>	
+<br>	
+<?php } 
+if ($curr_school >= 3) { ?>
+<div class="clearfix visible-xs-block" style="border: 1px solid #e1e1e8;">
+	<h4>&nbspAux School</h4>
+	<div class="clearfix visible-xs-block" style="background-color: #f7f7f9;">
+		<label>&nbsp&nbspNo. 1 Bible Reading <i><?php print $no_1; ?></i></label>
+		<form role="form" action="<?php echo $page; ?>" method="post">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="third_1">Student</label>
+					<select class="form-control input-sm" id="third_1" name="third_1" onchange="this.form.submit()"><?php echo $opt_third_1; ?></select>
+				</div>
+			</div>
+		</form>
+		<form role="form" action="<?php echo $page; ?>" method="post">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="third_1_study">Study</label>
+					<select class="form-control input-sm" id="third_1_study" name="third_1_study" onchange="this.form.submit()"><?php echo $opt_third_1_study; ?></select>
+				</div>
+			</div>
+		</form>
+	</div>
+	
+	<div class="clearfix visible-xs-block">
+		<label>&nbsp&nbspNo. 2 <i><?php print $no_2; ?></i></label>
+		<form role="form" action="<?php echo $page; ?>" method="post">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="third_2">Student</label>
+					<select class="form-control input-sm" id="third_2" name="third_2" onchange="this.form.submit()"><?php echo $opt_third_2; ?></select>
+				</div>
+			</div>
+		</form>
+		<form role="form" action="<?php echo $page; ?>" method="post">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="third_2_study">Study</label>
+					<select class="form-control input-sm" id="third_2_study" name="third_2_study" onchange="this.form.submit()"><?php echo $opt_third_2_study; ?></select>
+				</div>
+			</div>
+		</form>
+	</div>
+	
+	<div class="clearfix visible-xs-block">
+		<form role="form" action="<?php echo $page; ?>" method="post">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="third_2_hh">Assistant</label>
+					<select class="form-control input-sm" id=""third_2_hh" name=""third_2_hh" onchange="this.form.submit()"><?php echo $opt_third_2_hh; ?></select>
+				</div>
+			</div>
+		</form>
+		<form role="form" action="<?php echo $page; ?>" method="post">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="third_2_setting">Setting</label>
+					<select class="form-control input-sm" id="third_2_setting" name="third_2_setting" onchange="this.form.submit()"><?php echo $opt_third_2_setting; ?></select>
+				</div>
+			</div>
+		</form>
+	</div>
+	
+	<div class="clearfix visible-xs-block" style="background-color: #f7f7f9;">
+		<label>&nbsp&nbspNo. 3 <i><?php print $no_3; ?></i></label>
+		<form role="form" action="<?php echo $page; ?>" method="post">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="third_2">Student</label>
+					<select class="form-control input-sm" id="third_3" name="third_3" onchange="this.form.submit()"><?php echo $opt_third_3; ?></select>
+				</div>
+			</div>
+		</form>
+		<form role="form" action="<?php echo $page; ?>" method="post">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="third_3_study">Study</label>
+					<select class="form-control input-sm" id="third_3_study" name="third_3_study" onchange="this.form.submit()"><?php echo $opt_third_3_study; ?></select>
+				</div>
+			</div>
+		</form>
+	</div>
+	
+	<?php $sister =&is_sister($monday,$third_3); if ($sister == 1) { ?>
+	<div class="clearfix visible-xs-block" style="background-color: #f7f7f9;">
+		<form role="form" action="<?php echo $page; ?>" method="post">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="third_3_hh">Assistant</label>
+					<select class="form-control input-sm" id=""third_3_hh" name=""third_3_hh" onchange="this.form.submit()"><?php echo $opt_third_3_hh; ?></select>
+				</div>
+			</div>
+		</form>
+		<form role="form" action="<?php echo $page; ?>" method="post">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="third_3_setting">Setting</label>
+					<select class="form-control input-sm" id="third_3_setting" name="third_3_setting" onchange="this.form.submit()"><?php echo $opt_third_3_setting; ?></select>
+				</div>
+			</div>
+		</form>
+	</div>
+	<?php } ?>
+</div>
+<?php } ?>
+<div class="clearfix visible-xs-block">
+<p class="bg-primary"><?php echo $conflict_msg; ?></p>
+</div>
+<div class="clearfix visible-xs-block">
+	<a href="schoolworksheet_pdf.php?monday=<?php echo $monday; ?>" target="blank">WorkSheet</a>
+</div>

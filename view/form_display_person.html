@@ -1,0 +1,31 @@
+<form class="form-horizontal" role="form" action="edit_person.php" method="post">
+	<table class="table">
+		<tr><td>First name: </td><td><?php echo htmlentities($first_name); ?></td></tr>
+		<tr><td>Last name: </td><td><?php echo htmlentities($last_name); ?></td></tr>
+		<tr><td>E-mail: </td><td><?php echo htmlentities($email) . ' ' . $mail; ?>Send assignment E-mails to user?</td></tr>
+		<tr><td>Phone: </td><td><?php echo htmlentities($phone_1); ?></td></tr>
+		<tr><td>Publisher Type: </td><td><?php echo htmlentities($publisher_type); ?></td></tr>
+		<tr><td>Servant Type: </td><td><?php echo htmlentities($servant_type); ?></td></tr>
+	</table>
+	<table class="table">
+		<tr><td><?php if ($public_speaker_checked == 1) { echo $ok; } else {echo $ban_circle;} ?></td><td> Public Speaker</td></tr>
+		<tr><td><?php if ($chairman_checked == 1) { echo $ok; } else {echo $ban_circle;} ?></td><td> Chairman</td></tr>
+		<tr><td><?php if ($reader_checked == 1) { echo $ok; } else {echo $ban_circle;} ?></td><td> Reader</td></tr>
+		<tr><td><?php if ($overseer_checked == 1) { echo $ok; } else {echo $ban_circle;} ?></td><td> Overseer</td></tr>
+		<tr><td><?php if ($prayer_checked == 1) { echo $ok; } else {echo $ban_circle;} ?></td><td> Prayer</td></tr>
+		<tr><td><?php if ($bible_high_checked == 1) { echo $ok; } else {echo $ban_circle;} ?></td><td> Bible Highlights</td></tr>
+		<tr><td><?php if ($no_1_checked == 1) { echo $ok; } else {echo $ban_circle;} ?></td><td> Number 1 Talk</td></tr>
+		<tr><td><?php if ($no_2_checked == 1) { echo $ok; } else {echo $ban_circle;} ?></td><td> Number 2 Talk</td></tr>
+		<tr><td><?php if ($no_3_checked == 1) { echo $ok; } else {echo $ban_circle;} ?></td><td> Number 3 Talk</td></tr>
+		<tr><td><?php if ($householder_checked == 1) { echo $ok; } else {echo $ban_circle;} ?></td><td> Householder</td></tr>
+		<tr><td><?php if ($serv_meet_checked == 1) { echo $ok; } else {echo $ban_circle;} ?></td><td> Service Meeting Talks</td></tr>
+		<tr><td><?php if ($attend_checked == 1) { echo $ok; } else {echo $ban_circle;} ?></td><td> Attendant</td></tr>
+		<tr><td><?php if ($sound_panel_checked == 1) { echo $ok; } else {echo $ban_circle;} ?></td><td> Sound Panel</td></tr>
+		<tr><td><?php if ($stage_checked == 1) { echo $ok; } else {echo $ban_circle;} ?></td><td> Stage</td></tr>
+		<tr><td><?php if ($mic_checked == 1) { echo $ok; } else {echo $ban_circle;} ?></td><td> Microphone</td></tr>
+		<tr><td><?php if ($grounds_keeper_checked == 1) { echo $ok; } else {echo $ban_circle;} ?></td><td> Grounds Keeper</td></tr>
+	</table>	
+	<input type="hidden" name="id" value="<?php echo $user_id; ?>" />
+</form>
+<a href="edit_person.php?user_id=<?php echo $user_id; ?>"><span class="glyphicon glyphicon-edit"></span></a> Edit
+<a href="delete_person.php?user_id=<?php echo $user_id; ?>"><span class="glyphicon glyphicon-remove"></span></a> Delete
